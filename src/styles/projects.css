@@ -1,0 +1,117 @@
+.project-container {
+  padding-top: 10rem;
+  height: 100dvh;
+  background-color: var(--background-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.header-container h4 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-right: 4rem;
+}
+
+h4 {
+  color: var(--text-color);
+}
+
+.gallery-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+
+.slider-container {
+  margin: 0 -7px 0 3rem;
+}
+
+.slider-nav {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.slider-nav button {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid #696969;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outter {
+  height: 70dvh;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slider-base {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+}
+
+.slider-base img {
+  flex-basis: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.left-slider {
+  width: 55%;
+}
+
+.right-slider {
+  width: 20%;
+}
+
+.right-slider img {
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 2rem;
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+}
+
+.project-info h1 {
+  top: 0;
+  font-family: "DM Serif Display", serif;
+  position: absolute;
+  color: white;
+  left: -40%;
+  font-size: 7rem;
+}

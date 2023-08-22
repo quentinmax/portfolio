@@ -1,0 +1,13 @@
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content p {
+  width: 60ch;
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-family: Inter;
+}

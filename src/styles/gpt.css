@@ -1,0 +1,16 @@
+.ring {
+  position: relative;
+  width: 600px; /* Adjust to your preferred width */
+  height: 400px; /* Adjust to your preferred height */
+  perspective: 1000px;
+  cursor: grab;
+}
+
+.img {
+  position: absolute;
+  width: 600px; /* Adjust to your image width */
+  height: 400px; /* Adjust to your image height */
+  background-size: cover;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
