@@ -8,12 +8,15 @@ interface Props {
 
 const Cursor: React.FC<Props> = ({ trailRef, cursorRef }) => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [draggable, setDraggable] = useState(false);
 
   const onMouseMove = (e: MouseEvent) => {
     if (!cursorRef.current || !trailRef.current) return;
 
     // @ts-ignore
-    const interactable = e.target!.closest(".interactable");
+    setDraggable(
+      trailRef.current.className === "cursor-trail trail-interactable drag"
+    );
 
     cursorRef.current.style.transform = `translate(${e.clientX - 4}px, ${
       e.clientY - 4
@@ -53,7 +56,8 @@ const Cursor: React.FC<Props> = ({ trailRef, cursorRef }) => {
     return (
       <>
         <motion.div ref={trailRef} className="cursor-trail">
-          {"\u2197"}
+          {draggable ? "Drag or Click " : "\u2197"}
+          {}
         </motion.div>
         <motion.div ref={cursorRef} className="cursor"></motion.div>{" "}
       </>

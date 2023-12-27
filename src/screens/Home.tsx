@@ -2,14 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../sections/Hero";
 import Socials from "../components/Socials";
-import Projects from "../sections/Projects";
-import About from "../sections/About";
 import Menu from "../components/Menu";
-import { motion } from "framer-motion";
-import { CgArrowTopRight } from "react-icons/cg";
-import transition from "../util/transition";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Cursor from "../components/Cursor";
 import Footer from "../sections/Footer";
+import Description from "../sections/Description";
+import PanoramicSlider from "../components/PanoramicSlider";
 
 // ("   oooooo   oooooo     oooo           oooo                                                  .o.");
 // ("    `888.    `888.     .8'            `888                                                  888\n");
@@ -38,15 +36,23 @@ const Home = () => {
   const trailRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div>
-      <Navbar setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
-      <Hero />
+    <div className="home">
+      <div className="home-inner">
+        <Navbar setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
+        <Hero />
+        <PanoramicSlider cursorRef={cursorRef} trailRef={trailRef} />
+        <Description />
+        <svg style={{ height: 0 }}>
+          <filter id="grainy">
+            <feTurbulence type="turbulence" baseFrequency="0.65" />
+          </filter>
+        </svg>
+        {/* <About /> */}
+        <Menu setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
+        <Cursor cursorRef={cursorRef} trailRef={trailRef} />
+      </div>
       <Socials />
-      <Projects cursorRef={cursorRef} trailRef={trailRef} />
-      <About />
       <Footer />
-      <Menu setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
-      <Cursor cursorRef={cursorRef} trailRef={trailRef} />
     </div>
   );
 };

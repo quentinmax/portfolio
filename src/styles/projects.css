@@ -1,23 +1,26 @@
 .project-container {
   padding-top: 10rem;
   height: 100dvh;
-  background-color: var(--background-color);
+  background-color: var(--background);
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20%;
 }
 
 .header-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .header-container h1 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 7rem;
+  width: 8ch;
+  color: var(--text-color);
 }
 
 .header-container h4 {
@@ -66,40 +69,44 @@ h4 {
 
 .outter {
   height: 70dvh;
+  width: 100dvw;
   display: flex;
   overflow-x: hidden;
 }
 
 .slider-base {
-  height: 100%;
+  /* height: 100dvw; */
   overflow: hidden;
   display: flex;
   white-space: nowrap;
+  position: relative;
 }
 
 .slider-base img {
+  aspect-ratio: 16 / 9;
+  position: absolute;
   flex-basis: 100%;
   flex-shrink: 0;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   object-fit: cover;
 }
 
 .left-slider {
-  width: 55%;
+  width: 70dvw;
+}
+
+.left-slider img {
+  width: 100%;
 }
 
 .right-slider {
-  width: 20%;
-}
-
-.right-slider img {
-  object-fit: cover;
+  width: 20dvw;
 }
 
 .project-info {
   padding: 2rem;
-  width: 25%;
+  width: 15%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -110,8 +117,39 @@ h4 {
 .project-info h1 {
   top: 0;
   font-family: "DM Serif Display", serif;
+  z-index: 8;
   position: absolute;
   color: white;
   left: -40%;
   font-size: 7rem;
+}
+
+.ring,
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  position: absolute;
+  transform-origin: 50% 50% 800px;
+  z-index: -500;
+  backface-visibility: hidden;
+  border-radius: 2rem;
+}
+
+.carousel-container {
+  perspective: 2000px;
+  width: 300px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(220%, -60%);
+}
+
+.stage {
+  padding-top: 25%;
+  /* transform: translate(0, 75%); */
+  rotate: 8deg;
+  /* overflow: hidden; */
 }

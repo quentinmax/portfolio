@@ -23,8 +23,8 @@ const Menu: React.FC<Props> = ({ setMenuVisible, menuVisible }) => {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight * 2);
 
   const springConfig = {
-    stiffness: 100, // Adjust stiffness for smoother animation
-    damping: 20, // Adjust damping for smoother animation
+    stiffness: 100,
+    damping: 20,
   };
 
   const initialY = -windowHeight; // Initial position for animations

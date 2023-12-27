@@ -1,10 +1,9 @@
 import React from "react";
-import ProjectGallery from "../components/ProjectGallery";
+import ProjectGallery from "../components/PanoramicSlider";
 import "swiper/css/effect-coverflow";
 import { Swiper, SwiperSlide } from "swiper/react";
 import GalleryItem from "../components/GalleryItem";
 import { A11y } from "swiper/modules";
-import ImageGallery from "../components/GPT";
 import ProjectsSlider from "../components/ProjectsSlider";
 
 interface Props {
@@ -16,8 +15,8 @@ const Projects: React.FC<Props> = ({ cursorRef, trailRef }) => {
   return (
     <div className="project-container">
       <div className="header-container">
-        <h4>Latest Projects</h4>
-        <h1>Take a look at my current work.</h1>
+        <h4>My work</h4>
+        <h1>Featured Projects</h1>
       </div>
       <ProjectsSlider cursorRef={cursorRef} trailRef={trailRef} />
 

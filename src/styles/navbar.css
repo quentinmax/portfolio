@@ -1,0 +1,74 @@
+.navbar {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 2rem 0 2rem;
+}
+
+.hamburger-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 9999999px;
+  background-color: white;
+}
+
+.hamburger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 9999999px;
+  background-color: var(--accent);
+  border-width: 0;
+  z-index: 90;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: hamburger-fade-in 1.5s cubic-bezier(0.61, 0.41, 0.05, 0.985)
+    forwards;
+  animation-delay: 2600ms;
+}
+
+.hamburger-button .line {
+  transition: 1s;
+  stroke-dasharray: 60 32 60 300;
+}
+
+.hamburger-button .hamburger {
+  transition: 1s ease-in-out, rotate 1s;
+}
+
+.hamburger-button-anim .hamburger {
+  translate: 3px -3px;
+  rotate: 0.125turn;
+}
+
+.hamburger-button-anim .line {
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
+}
+
+#signature {
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+  animation: sign 2s cubic-bezier(0.61, 0.41, 0.05, 0.985) forwards;
+  transition-timing-function: cubic-bezier(0.61, 0.41, 0.05, 0.985);
+  animation-delay: 2600ms;
+}
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hamburger-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

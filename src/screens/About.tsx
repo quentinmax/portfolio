@@ -16,7 +16,7 @@ const About = () => {
   );
 };
 
-const StrikethroughText = ({ text }) => {
+const StrikethroughText = ({ text }: { text: string }) => {
   const [isStrikethrough, setIsStrikethrough] = useState(false);
   const controls = useAnimation();
 

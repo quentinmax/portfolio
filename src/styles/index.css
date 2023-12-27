@@ -2,34 +2,55 @@
 :root {
   --text-color: #d6d1ce;
   --background: #121212;
-  /* --accent: burlywood; */
-  /* --accent: lightsalmon; */
   --accent: slateblue;
   --accent2: lightsalmon;
+  --rotation: 0deg;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color: var(--text-color);
   background-color: var(--background);
-
-  display: block;
   padding: 0px;
   margin: 0px;
+
+  display: block;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 5rem;
+  scrollbar-width: thin;
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: var(--accent) var(--background);
+  }
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body::before {
+  position: fixed;
+  inset: 0 0 0 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 30%;
+  background-color: #00000000;
+  filter: url("#grainy");
+  pointer-events: none;
 }
 
 a {
@@ -41,139 +62,23 @@ a {
   cursor: none;
 }
 
-.cursor {
-  /* background-color: transparent;
-  border: 2px solid var(--text-color);
-  height: 60px;
-  width: 60px; */
-  position: fixed;
-  background-color: white;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  transform-origin: center;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  transition: height 200ms ease-in-out, width 200ms ease-in-out,
-    border 200ms ease-in-out, background-color 200ms ease-in-out,
-    mix-blend-mode- 500ms ease-in-out;
-
-  opacity: 1;
-
-  transition: opacity 0.5ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  mix-blend-mode: difference;
-  will-change: transform;
-  user-select: none;
-  pointer-events: none;
-}
-
-.cursor .interactable {
-  opacity: 0;
-  transform: scale(12);
-}
-.interactable {
-  border: 0px;
-  opacity: 0;
-}
-
-.cursor-trail {
-  position: fixed;
-  background: white;
-  opacity: 0.1;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  z-index: 999;
-  transition: 200ms cubic-bezier(0.165, 0.84, 0.44, 1) opacity,
-    200ms cubic-bezier(0.165, 0.84, 0.44, 1) scale;
-  user-select: none;
-
-  pointer-events: none;
-  scale: 1;
-  color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-
-.cursor-trail.trail-interactable {
-  opacity: 1;
-  scale: 2;
-  color: var(--background);
-}
-
-.navbar {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 0 2rem 0 2rem;
-}
-
-.hamburger-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  width: 60px;
-  border-radius: 9999999px;
-  background-color: white;
-}
-
-.hamburger-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  border-radius: 9999999px;
-  background-color: var(--accent);
-  border-width: 0;
-  z-index: 90;
-}
-
-.hamburger-button .line {
-  transition: 1s;
-  stroke-dasharray: 60 32 60 300;
-}
-
-.hamburger-button .hamburger {
-  transition: 1s ease-in-out, rotate 1s;
-}
-
-.hamburger-button-anim .hamburger {
-  translate: 3px -3px;
-  rotate: 0.125turn;
-}
-
-.hamburger-button-anim .line {
-  stroke-dasharray: 60 105 60 300;
-  stroke-dashoffset: -90;
-}
-
-#signature {
-  stroke-dasharray: 90;
-  stroke-dashoffset: 90;
-  animation: sign 2s cubic-bezier(0.61, 0.41, 0.05, 0.985) forwards;
-  transition-timing-function: cubic-bezier(0.61, 0.41, 0.05, 0.985);
-}
-
-@keyframes sign {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 .slide-out {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: var(--accent);
   transform-origin: top;
+}
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--accent);
+  transform-origin: bottom;
 }
 
 .strikethrough {
@@ -197,4 +102,11 @@ a {
   .strikethrough {
     height: 8px;
   }
+}
+
+.home-inner {
+  background-color: var(--background);
+  z-index: 10;
+  position: relative;
+  overflow: hidden;
 }

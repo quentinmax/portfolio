@@ -27,6 +27,13 @@ const Navbar: React.FC<Props> = ({ menuVisible, setMenuVisible }) => {
             strokeLinecap="round"
           />
         </svg>
+        {/* <img
+          src="/public/logo.png"
+          alt="logo"
+          height={60}
+          width={100}
+          style={{ opacity: 0.7 }}
+        /> */}
       </Link>
       {/* <div className="hamburger-menu"> */}
       <motion.button

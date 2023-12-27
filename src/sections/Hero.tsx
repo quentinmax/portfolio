@@ -28,14 +28,16 @@ const Hero = () => {
             translateX: offsetXTop,
           }}
         >
-          <AnimatedText title="Mobile- &nbsp;&" banner={true} />
+          <AnimatedText title="Mobile- &nbsp;&" banner={true} delay={1.2} />
+          {/* <AnimatedText title="Full-Stack-" banner={true} /> */}
         </motion.div>
         <motion.div
           style={{
             translateX: offsetXBottom,
           }}
         >
-          <AnimatedText title="Web-Developer" banner={true} />
+          <AnimatedText title="Web-Developer" banner={true} delay={1.5} />
+          {/* <AnimatedText title="Developer" banner={true} /> */}
         </motion.div>
       </div>
     </div>

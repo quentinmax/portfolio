@@ -1,15 +1,29 @@
 .footer-container {
+  background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   justify-content: center;
-  height: 30dvh;
-  padding: 0 15rem;
+  align-items: center;
+  padding: 0 10rem;
+  z-index: -10;
+  translate: 0 -33%;
+}
+
+.footer-container h1 {
+  font-size: 8rem;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+
+.footer-container hr {
+  width: 100%;
+  color: var(--text-color);
 }
 
 .footer-content {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -19,6 +33,7 @@
   justify-content: space-between;
   font-weight: 400;
   color: #696969;
+  width: 100%;
 }
 
 .nav-buttons {

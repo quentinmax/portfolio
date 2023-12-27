@@ -1,10 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MenuSocials from "../components/MenuSocials";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const Footer = () => {
+  const { scrollYProgress } = useScroll();
+
+  const y = useTransform(scrollYProgress, [0.8, 1], [0, 225]);
+
   return (
-    <div className="footer-container">
+    <motion.div className="footer-container" style={{ y }}>
+      <h1>
+        I caught your interest?
+        <br /> Let's hook up!
+      </h1>
+      <hr />
       <div className="footer-content">
         <div className="nav-buttons">
           <Link to={"/work"}>Work</Link>
@@ -14,10 +24,10 @@ const Footer = () => {
         <MenuSocials menuVisible={true} />
       </div>
       <div className="footer-info">
-        <p>Copyright © 2023 | Made by Quentin Höhne with Love and React</p>
-        <p>Version 0.3</p>
+        <p>Copyright © 2023 | Made by Quentin Höhne with ♥️ and React</p>
+        <p>Version 0.4</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
